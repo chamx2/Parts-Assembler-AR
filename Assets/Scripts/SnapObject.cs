@@ -11,10 +11,11 @@ public class SnapObject : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("Plasma"))
+
+        Debug.Log(other.gameObject.name + " " + other.gameObject.tag + " " + tag);
+        if (gameObject.tag == other.tag)
         {
-            Debug.Log(other.gameObject.name + " " + other.gameObject.tag + " " + tag);
+           
             other.transform.position = transform.position;
             other.transform.rotation = transform.rotation;
 
