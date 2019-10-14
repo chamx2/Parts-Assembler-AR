@@ -25,6 +25,20 @@ public class SnapObject : MonoBehaviour
     }
 
 
+    private IEnumerator OnTriggerStay(Collider other)
+    {
+        yield return new WaitForSeconds(1);
+
+        if (gameObject.tag == other.tag)
+        {
+
+            other.transform.position = transform.position;
+            other.transform.rotation = transform.rotation;
+
+            
+        }
+    }
+
     //private void OnCollisionEnter(Collision collision)
     //{
     //    //Debug.Log(collision.gameObject.name);
